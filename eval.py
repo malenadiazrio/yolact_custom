@@ -132,7 +132,7 @@ coco_cats = {} # Call prep_coco_cats to fill this
 coco_cats_inv = {}
 color_cache = defaultdict(lambda: {})
 
-def prep_display(dets_out, img, h, w, undo_transform=True, class_color=False, mask_alpha=0.45, fps_str=''):
+def prep_display(dets_out, img, h, w, undo_transform=True, class_color=False, mask_alpha=0.45, fps_str='', img_path=""):
     """
     Note: If undo_transform=False then im_h and im_w are allowed to be None.
     """
@@ -158,6 +158,10 @@ def prep_display(dets_out, img, h, w, undo_transform=True, class_color=False, ma
             # Masks are drawn on the GPU, so don't copy
             masks = t[3][idx]
         classes, scores, boxes = [x[idx].cpu().numpy() for x in t[:3]]
+        classes, scores, boxes = [x[idx].cpu().numpy() for x in t[:3]]
+        c, s, b, m = [x[idx].cpu().numpy() for x in t]
+        d = {'classes':c, "scores":s, "boxes":b, "masks": m}
+        np.save('{}'.format(img_path.replace('png', 'npy')), d)
 
     num_dets_to_consider = min(args.top_k, classes.shape[0])
     for j in range(num_dets_to_consider):
@@ -604,7 +608,7 @@ def evalimage(net:Yolact, path:str, save_path:str=None):
     batch = FastBaseTransform()(frame.unsqueeze(0))
     preds = net(batch)
 
-    img_numpy = prep_display(preds, frame, None, None, undo_transform=False)
+    img_numpy = prep_display(preds, frame, None, None, undo_transform=False, img_path = save_path)
     
     if save_path is None:
         img_numpy = img_numpy[:, :, (2, 1, 0)]

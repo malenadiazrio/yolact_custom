@@ -783,7 +783,7 @@ yolact_resnet50_foot_pron_config = yolact_resnet50_config.copy({
     'num_classes': len(foot_pron_dataset.class_names) + 1,
 
     # Image Size
-    'max_size': 1200,
+    'max_size': 780,
 })
 
 # ----------------------- YOLACT++ CONFIGS ----------------------- #
