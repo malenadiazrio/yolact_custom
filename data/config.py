@@ -172,6 +172,15 @@ pascal_sbd_dataset = dataset_base.copy({
     'class_names': PASCAL_CLASSES,
 })
 
+foot_pron_dataset = dataset_base.copy({
+  'name': 'FootPronation-UTS',
+  'train_info': '',
+  'train_images': '',
+  'valid_info': '',
+  'valid_images': '',
+  'class_names': ('left_leg', 'right_leg'),
+  'label_map': { 1:  1, 2:  2 }
+})
 
 
 
@@ -765,6 +774,16 @@ yolact_resnet50_pascal_config = yolact_resnet50_config.copy({
         'pred_scales': [[32], [64], [128], [256], [512]],
         'use_square_anchors': False,
     })
+})
+
+yolact_resnet50_foot_pron_config = yolact_resnet50_config.copy({
+    'name': 'yolact_plus_resnet50_foot_pron',
+    # Dataset stuff
+    'dataset': foot_pron_dataset,
+    'num_classes': len(foot_pron_dataset.class_names) + 1,
+
+    # Image Size
+    'max_size': 1200,
 })
 
 # ----------------------- YOLACT++ CONFIGS ----------------------- #
