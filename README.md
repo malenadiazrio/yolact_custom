@@ -1,17 +1,18 @@
 ## YOLO ACT EXTENSION
 In this fork of the YOLOACT github available at: https://github.com/dbolya/yolact, some modifications are made to the original model. 
-<li>
-    <ul> The possibility to run eval.py in a CPU device is implemented. </ul>
-    <ul> When eval.py is executed to process image inference, the quantitative predicted results are saved in a .npy file with the a
-        same name as the output image. </ul>
-    <ul>A new data configuration is defined to make the model work with the FootStep Pronation dataset.</ul>
-</li>
+<ul>
+   <li> The possibility to run eval.py in a CPU device is implemented. </li>
+   <li> When eval.py is executed to process image inference, the quantitative predicted results are saved in a .npy file with the a
+        same name as the output image. </li>
+    <li>A new data configuration is defined to make the model work with the FootStep Pronation dataset.</li>
+</ul>
 
 To use the pre trained weights of the FootStep Pronation dataset download them from the following link: 
 https://drive.google.com/file/d/1-JFNO2tD006ib9qB0ZfJGMuv2o9dTqd_/view?usp=sharing 
 
 FootStep extension property: Malena Díaz Río, malena.diazrio@student.uts.edu
 
+**The rest of this file belongs to the original repository**
 
 # **Y**ou **O**nly **L**ook **A**t **C**oefficien**T**s
 ```
