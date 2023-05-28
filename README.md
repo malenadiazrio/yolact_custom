@@ -1,3 +1,18 @@
+## YOLO ACT EXTENSION
+In this fork of the YOLOACT github available at: https://github.com/dbolya/yolact, some modifications are made to the original model. 
+<li>
+    <ul> The possibility to run eval.py in a CPU device is implemented. </ul>
+    <ul> When eval.py is executed to process image inference, the quantitative predicted results are saved in a .npy file with the a
+        same name as the output image. </ul>
+    <ul>A new data configuration is defined to make the model work with the FootStep Pronation dataset.</ul>
+</li>
+
+To use the pre trained weights of the FootStep Pronation dataset download them from the following link: 
+https://drive.google.com/file/d/1-JFNO2tD006ib9qB0ZfJGMuv2o9dTqd_/view?usp=sharing 
+
+FootStep extension property: Malena Díaz Río, malena.diazrio@student.uts.edu
+
+
 # **Y**ou **O**nly **L**ook **A**t **C**oefficien**T**s
 ```
     ██╗   ██╗ ██████╗ ██╗      █████╗  ██████╗████████╗
@@ -17,16 +32,6 @@ YOLACT++'s resnet50 model runs at 33.5 fps on a Titan Xp and achieves 34.1 mAP o
 
 In order to use YOLACT++, make sure you compile the DCNv2 code. (See [Installation](https://github.com/dbolya/yolact#installation))
 
-#### For a real-time demo, check out our ICCV video:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0pMfmo8qfpQ/0.jpg)](https://www.youtube.com/watch?v=0pMfmo8qfpQ)
-
-Some examples from our YOLACT base model (33.5 fps on a Titan Xp and 29.8 mAP on COCO's `test-dev`):
-
-![Example 0](data/yolact_example_0.png)
-
-![Example 1](data/yolact_example_1.png)
-
-![Example 2](data/yolact_example_2.png)
 
 # Installation
  - Clone this repository and enter it:
